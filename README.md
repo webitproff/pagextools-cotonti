@@ -8,6 +8,15 @@
 A plugin for Cotonti CMS that adds to the **Pages** module admin panel a convenient category filter (with Select2 support) and full-text search across the page title and body. Sorting by table fields, status, and direction. Works without core modifications — all logic is implemented through native Cotonti hooks.
 
 ---
+<img width="1920" height="1080" alt="pagextools-cotonti__001" src="https://github.com/user-attachments/assets/652f6415-cfc8-45ea-89a1-41d2fb998115" />
+<img width="1920" height="904" alt="pagextools-cotonti__002" src="https://github.com/user-attachments/assets/3ea68a2f-c7cd-4716-80b6-1da4fd595336" />
+<img width="1920" height="1080" alt="pagextools-cotonti__003" src="https://github.com/user-attachments/assets/36fafb02-7b91-49e9-aca0-56a7db02d1f1" />
+<img width="1920" height="1080" alt="pagextools-cotonti__004" src="https://github.com/user-attachments/assets/5f4a2dd3-37d9-420b-b6de-c7d9dd568c06" />
+<img width="1920" height="1080" alt="pagextools-cotonti__005" src="https://github.com/user-attachments/assets/bf7e32c8-26ab-407c-80b0-c85bd261e6c6" />
+
+
+
+
 
 ## 📑 Table of Contents
 
@@ -280,7 +289,7 @@ AND REPLACE IT ENTIRELY WITH THE BLOCK BELOW:
       </div>
       <div class="col-12 col-lg-3 d-flex flex-column h-100">
         <label class="form-label">{PHP.L.Category}</label>
-        <div class="flex-grow-1 filterSelect">{SEARCH_CAT_SELECT2_CAT_EMPTY}</div>
+        <div class="flex-grow-1 filterSelect">{SEARCH_CAT_SELECT2}</div>
       </div>
       <div class="col-12 col-lg-3 d-flex flex-column h-100">
         <label class="form-label">{PHP.L.pagextools_filter_option_status}</label>
@@ -933,7 +942,7 @@ plugins/pagextools/
       </div>
       <div class="col-12 col-lg-3 d-flex flex-column h-100">
         <label class="form-label">{PHP.L.Category}</label>
-        <div class="flex-grow-1 filterSelect">{SEARCH_CAT_SELECT2_CAT_EMPTY}</div>
+        <div class="flex-grow-1 filterSelect">{SEARCH_CAT_SELECT2}</div>
       </div>
       <div class="col-12 col-lg-3 d-flex flex-column h-100">
         <label class="form-label">{PHP.L.pagextools_filter_option_status}</label>
