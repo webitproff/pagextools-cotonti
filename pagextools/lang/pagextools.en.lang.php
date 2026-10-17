@@ -21,3 +21,4 @@ $L['pagextools_all']      = 'All';
 $L['pagextools_filter_option_status']     = 'Publication status';
 $L['pagextools_filter_sorting_direction'] = 'Sorting direction';
 $L['pagextools_filter_sorting_fields']    = 'Sorting field';
+$L['pagextools_all_categories'] = 'All categories';

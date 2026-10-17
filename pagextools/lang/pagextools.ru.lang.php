@@ -21,3 +21,4 @@ $L['pagextools_all']      = 'Все';
 $L['pagextools_filter_option_status']   = 'Статус публикации';
 $L['pagextools_filter_sorting_direction'] = 'Направление сортировки';
 $L['pagextools_filter_sorting_fields'] = 'Поле сортировки';
+$L['pagextools_all_categories'] = 'Все категории';

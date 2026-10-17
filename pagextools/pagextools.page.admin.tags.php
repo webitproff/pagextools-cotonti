@@ -58,6 +58,32 @@ $pxt_c  = cot_import('c', 'G', 'ALP');
 //                     идентификатор. Пустая строка, если ?c= нет.
 
 
+// ─────────────────────────────────────────────────────────────────────
+// CATTITLE — заголовок выбранной категории для вывода рядом с формой
+// с учётом перевода через плагин i18n
+// ─────────────────────────────────────────────────────────────────────
+$pxt_cattitle = '';
+if (!empty($pxt_c) && isset(Cot::$structure['page'][$pxt_c])) {
+    // Оригинальное название из структуры
+    $pxt_cattitle = Cot::$structure['page'][$pxt_c]['title'];
+
+    // Глобальное состояние плагина i18n
+    global $i18n_read, $i18n_locale;
+
+    // i18n активен: плагин включён + локаль задана + локаль не дефолтная
+    $pxt_i18n_enabled = $i18n_read
+        && !empty($i18n_locale)
+        && $i18n_locale != Cot::$cfg['defaultlang'];
+
+    if (cot_plugin_active('i18n') && $pxt_i18n_enabled) {
+        $translated_cat = cot_i18n_get_cat($pxt_c, $i18n_locale);
+        if ($translated_cat && !empty($translated_cat['title'])) {
+            $pxt_cattitle = $translated_cat['title'];
+        }
+    }
+}
+
+
 $t->assign([
 
     // ─────────────────────────────────────────────────────────────────────
@@ -121,13 +147,6 @@ $t->assign([
     // ─────────────────────────────────────────────────────────────────────
     // CATTITLE — заголовок выбранной категории для вывода рядом с формой
     // ─────────────────────────────────────────────────────────────────────
-	'CATTITLE'           => (!empty($pxt_c) && isset(Cot::$structure['page'][$pxt_c]))
-								? htmlspecialchars(Cot::$structure['page'][$pxt_c]['title'])
-								: '',
-	// 'CATTITLE'           — имя тега в шаблоне: {CATTITLE}
-	// !empty($pxt_c)       — категория выбрана (параметр ?c= не пуст)
-	// isset(...[$pxt_c])   — и такой код реально есть в структуре Page
-	// htmlspecialchars(...) — название категории, безопасно для HTML
-	// : ''                 — если не выбрана — пустая строка
+	'CATTITLE'           => $pxt_cattitle !== '' ? htmlspecialchars($pxt_cattitle) : '', 
 
 ]);
