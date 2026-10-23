@@ -33,8 +33,7 @@ Order=10
 
 defined('COT_CODE') or die('Wrong URL.');
 
-require_once cot_incfile('pagextools', 'plug', 'functions');
-require_once cot_langfile('pagextools', 'plug');
+require_once cot_incfile('pagextools', 'plug');
 
 $pxt_sq = cot_import('sq', 'G', 'TXT');
 $pxt_c  = cot_import('c', 'G', 'ALP');
